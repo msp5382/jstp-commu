@@ -1,0 +1,45 @@
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * ibm-plex-thai:
+ *   - http://typekit.com/eulas/00000000000000003b9b3253
+ *   - http://typekit.com/eulas/00000000000000003b9b3256
+ *
+ * © 2009-2020 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2020-04-01 15:45:24 UTC"}*/
+
+@import url("https://p.typekit.net/p.css?s=1&k=nqz2ugs&ht=tk&f=42204.42207&a=34812183&app=typekit&e=css");
+
+@font-face {
+  font-family: "ibm-plex-thai";
+  src: url("https://use.typekit.net/af/1bad7a/00000000000000003b9b3253/27/l?primer=55460fc0f9c0872d8fb7cf48aa74998707c06bdf202865a7c23f10c82ea380b1&fvd=n4&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/1bad7a/00000000000000003b9b3253/27/d?primer=55460fc0f9c0872d8fb7cf48aa74998707c06bdf202865a7c23f10c82ea380b1&fvd=n4&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/1bad7a/00000000000000003b9b3253/27/a?primer=55460fc0f9c0872d8fb7cf48aa74998707c06bdf202865a7c23f10c82ea380b1&fvd=n4&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "ibm-plex-thai";
+  src: url("https://use.typekit.net/af/4262c2/00000000000000003b9b3256/27/l?primer=55460fc0f9c0872d8fb7cf48aa74998707c06bdf202865a7c23f10c82ea380b1&fvd=n7&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/4262c2/00000000000000003b9b3256/27/d?primer=55460fc0f9c0872d8fb7cf48aa74998707c06bdf202865a7c23f10c82ea380b1&fvd=n7&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/4262c2/00000000000000003b9b3256/27/a?primer=55460fc0f9c0872d8fb7cf48aa74998707c06bdf202865a7c23f10c82ea380b1&fvd=n7&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.tk-ibm-plex-thai {
+  font-family: "ibm-plex-thai", sans-serif;
+}

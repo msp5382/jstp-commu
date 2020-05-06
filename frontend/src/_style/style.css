@@ -1,0 +1,6 @@
+@import "./plex.css";
+body {
+  margin: 0;
+  font-family: ibm-plex-thai, sans-serif;
+  background-color: #f8f7fc;
+}
