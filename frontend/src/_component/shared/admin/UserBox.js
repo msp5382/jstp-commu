@@ -49,14 +49,16 @@ const EditableData = ({ placeholder, type, onChange, value }) => (
   </EditRow>
 );
 
-const ArrayOrNull = (arr) => {
-  console.log(arr);
-  if (arr === undefined || arr === null) {
-    return [];
-  } else {
-    return arr;
-  }
-};
+const SaveButton = styled.div`
+  padding: 3px;
+  border-radius: 5px;
+  background-color: ${COLOR.bluegreen};
+  color: ${COLOR.white};
+  font-size: 13px;
+  font-weight: "bold";
+  margin-left: 5px;
+  margin-top: 5px;
+`;
 export default ({ user, onSave }) => {
   const [newUserData, setNewUserData] = useState(user);
   const [userMetaData, setNewUserMetaData] = useState(user.metaData || []);
@@ -128,26 +130,26 @@ export default ({ user, onSave }) => {
       />
       <EditableData
         onChange={setUserMetaData}
-        //value={findMetaData("อายุ")}
         name="age"
         type="number"
         placeholder="อายุ"
       />
       <EditableData
         onChange={setUserMetaData}
-        value={findMetaData("เกียรติยศ")}
         name="honor"
         type="number"
         placeholder="เกียรติยศ"
       />
       <EditableData
         onChange={setUserMetaData}
-        value={findMetaData("เงิน")}
         name="money"
         type="number"
         placeholder="เงิน"
       />
-      {newUserData != user ? <div>บันทึก</div> : <></>}
+      <div className="d-flex justify-content-end">
+        <SaveButton>แก้ไขไอเทม</SaveButton>
+        <SaveButton>บันทึก</SaveButton>
+      </div>
     </DataShowBox>
   );
 };

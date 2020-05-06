@@ -7,4 +7,5 @@ export const COLOR = {
   orange: "#fc7e2f",
   black: "#000",
   red: "#ff5a5a",
+  bluegreen: "#17a2b8",
 };
