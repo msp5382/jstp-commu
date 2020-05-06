@@ -6,15 +6,6 @@ import { COLOR } from "./_component/theme";
 import { listenToAuthChange, Logout } from "./_service/firebaseAuth";
 import { getAdminData } from "./_service/firebaseDB";
 
-const DataShowBox = styled(BoxShadow)`
-  padding: 15px;
-  border-radius: 15px;
-
-  background-color: ${COLOR.white};
-  margin-bottom: 15px;
-  width: fit-content;
-`;
-
 const LogoutButton = styled.div`
   padding: 10px;
   color: ${COLOR.white};
