@@ -211,6 +211,13 @@ export default ({ user, onSave }) => {
         placeholder="สถานภาพ"
       />
       <EditableData
+        onChange={setUserData}
+        value={newUserData["family"]}
+        name="family"
+        type="text"
+        placeholder="ตระกูล"
+      />
+      <EditableData
         onChange={setUserMetaData}
         value={findMetaData("อายุ")}
         name="age"
