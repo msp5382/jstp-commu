@@ -109,27 +109,35 @@ export default (props) => {
         </DataShowBox>
         <DataShowBox>
           {serverProfile.metaData ? (
-            serverProfile?.metaData.map((data, key) => (
-              <DataRow key={key}>
-                <div
-                  style={{
-                    fontWeight: data.type === "ITEM" ? "normal" : "bold",
-                    fontSize: data.type === "ITEM" ? 14 : "inherit",
-                  }}>
-                  {data.key}
-                  {data.itemType ? ` (${data.itemType})` : ``}
-                </div>
-                <div
-                  style={{
-                    fontSize: data.type === "ITEM" ? 14 : "inherit",
-                  }}>
-                  {{
-                    NUMBER: <RunNumber count={data.value} />,
-                    ITEM: <RunNumber count={data.value} />,
-                  }[data.type] || <>{data.value}</>}
-                </div>
-              </DataRow>
-            ))
+            serverProfile?.metaData
+              .sort((a, b) => {
+                if (a.type === "ITEM") {
+                  return 1;
+                } else {
+                  return -1;
+                }
+              })
+              .map((data, key) => (
+                <DataRow key={key}>
+                  <div
+                    style={{
+                      fontWeight: data.type === "ITEM" ? "normal" : "bold",
+                      fontSize: data.type === "ITEM" ? 14 : "inherit",
+                    }}>
+                    {data.key}
+                    {data.itemType ? ` (${data.itemType})` : ``}
+                  </div>
+                  <div
+                    style={{
+                      fontSize: data.type === "ITEM" ? 14 : "inherit",
+                    }}>
+                    {{
+                      NUMBER: <RunNumber count={data.value} />,
+                      ITEM: <RunNumber count={data.value} />,
+                    }[data.type] || <>{data.value}</>}
+                  </div>
+                </DataRow>
+              ))
           ) : (
             <></>
           )}
