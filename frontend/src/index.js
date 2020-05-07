@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./_style/style.css";
@@ -12,18 +17,15 @@ const Routes = (props) => {
   return (
     <Router>
       <Switch>
+        <Redirect path="/" exact to="/auth/login" />
         <Route path="/auth">
           <Auth />
         </Route>
         <Route path="/user">
           <User />
         </Route>
-
         <Route path="/admin">
           <Admin />
-        </Route>
-        <Route path="/">
-          <Auth />
         </Route>
       </Switch>
     </Router>

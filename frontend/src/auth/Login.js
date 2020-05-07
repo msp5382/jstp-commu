@@ -49,7 +49,8 @@ export default (props) => {
       receiveRedirectResult(() => history.push("/user"));
       const user = await listenToAuthChange();
       if (user) {
-        history.push("/user");
+        window.location = "/user";
+        //history.push("/user");
       } else {
         receiveRedirectResult();
       }
