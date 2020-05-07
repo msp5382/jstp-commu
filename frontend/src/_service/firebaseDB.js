@@ -38,6 +38,16 @@ export const getAdminData = async (onChange) => {
   });
 };
 
+export const getPublicUserData = async (onChange) => {
+  db.collection("/publicUser").onSnapshot(function (querySnapshot) {
+    var user = [];
+    querySnapshot.forEach(function (doc) {
+      user.push({ ...doc.data(), id: doc.ref.id });
+    });
+    onChange(user);
+  });
+};
+
 export const saveUserDB = async (data, uid) => {
   let userRef = db.collection("users").doc(uid);
   let publicUserRef = db.collection("publicUser").doc(uid);

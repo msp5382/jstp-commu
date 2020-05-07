@@ -158,12 +158,15 @@ export default (props) => {
             <></>
           )}
         </DataShowBox>
-
-        <ActionShowBox>
-          <ActionButton onClick={() => history.push("/public/all_users")}>
-            ดู Scoreboard
-          </ActionButton>
-        </ActionShowBox>
+        {false ? (
+          <ActionShowBox>
+            <ActionButton onClick={() => history.push("/public/all_users")}>
+              ดู Scoreboard
+            </ActionButton>
+          </ActionShowBox>
+        ) : (
+          <></>
+        )}
       </DataShowBoxContainer>
       <div className="d-flex">
         <LogoutButton
