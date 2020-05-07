@@ -20,10 +20,11 @@ const LogoutButton = styled.div`
   margin-bottom: 10px;
   position: absolute;
   bottom: 0;
+  position: fixed;
 `;
 const UserContainer = styled.div`
   display: flex;
-  flex-wrap: true;
+  flex-wrap: wrap;
 `;
 
 export default (props) => {

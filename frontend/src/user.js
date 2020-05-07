@@ -66,6 +66,21 @@ const DataRow = styled.div`
   margin-bottom: 5px;
   margin-top: 5px;
 `;
+
+const ActionButton = styled.div`
+  padding: 10px;
+  color: ${COLOR.white};
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: ${COLOR.bluegreen};
+  cursor: pointer;
+  margin: 5px;
+`;
+const ActionShowBox = styled(DataShowBox)`
+  display: flex;
+  padding: 5px;
+  flex-wrap: wrap;
+`;
 export default (props) => {
   const history = useHistory();
   const [profileImg, setProfileImg] = useState("");
@@ -143,11 +158,19 @@ export default (props) => {
             <></>
           )}
         </DataShowBox>
+
+        <ActionShowBox>
+          <ActionButton onClick={() => history.push("/public/all_users")}>
+            ดู Scoreboard
+          </ActionButton>
+        </ActionShowBox>
       </DataShowBoxContainer>
-      <LogoutButton
-        onClick={() => Logout().then(() => history.push("/auth/login"))}>
-        ออกจากระบบ
-      </LogoutButton>
+      <div className="d-flex">
+        <LogoutButton
+          onClick={() => Logout().then(() => history.push("/auth/login"))}>
+          ออกจากระบบ
+        </LogoutButton>
+      </div>
     </PageWrap>
   );
 };

@@ -40,6 +40,17 @@ export const getAdminData = async (onChange) => {
 
 export const saveUserDB = async (data, uid) => {
   let userRef = db.collection("users").doc(uid);
-  await userRef.set(data, { merge: true });
+  let publicUserRef = db.collection("publicUser").doc(uid);
+  await Promise.all([
+    publicUserRef.set(
+      {
+        name: data.name,
+        status: data.status,
+        metaData: data.metaData.filter((meta) => meta.type !== "ITEM"),
+      },
+      { merge: true }
+    ),
+    userRef.set(data, { merge: true }),
+  ]);
   return;
 };

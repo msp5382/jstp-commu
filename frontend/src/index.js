@@ -12,7 +12,7 @@ import "./_style/style.css";
 import Auth from "./auth";
 import User from "./user";
 import Admin from "./admin";
-
+import Public from "./public";
 const Routes = (props) => {
   return (
     <Router>
@@ -20,6 +20,9 @@ const Routes = (props) => {
         <Redirect path="/" exact to="/auth/login" />
         <Route path="/auth">
           <Auth />
+        </Route>
+        <Route path="/public">
+          <Public />
         </Route>
         <Route path="/user">
           <User />
