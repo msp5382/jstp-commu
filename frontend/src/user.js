@@ -104,6 +104,7 @@ export default (props) => {
                   "บัญชีของคุณไม่มีข้อมูล ต้องรอ GM มากรอกข้อมูลคุณ"}
               </div>
               <div style={{ fontSize: 13 }}>{serverProfile.status}</div>
+              <div style={{ fontSize: 13 }}>{serverProfile.family}</div>
             </NameContainer>
           </ProfileContainer>
         </DataShowBox>
