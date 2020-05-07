@@ -1,4 +1,5 @@
-import firebase from "firebase";
+import firebase from "./firebase";
+
 const db = firebase.firestore();
 
 export const getRealtimeData = (onChange, uid) => {
@@ -29,12 +30,16 @@ export const refreshData = async () => {
 
 export const getAdminData = async (onChange) => {
   db.collection("users").onSnapshot(function (querySnapshot) {
-    //let data = doc.data();
     var user = [];
     querySnapshot.forEach(function (doc) {
-      user.push(doc.data());
+      user.push({ ...doc.data(), id: doc.ref.id });
     });
-
     onChange(user);
   });
+};
+
+export const saveUserDB = async (data, uid) => {
+  let userRef = db.collection("users").doc(uid);
+  await userRef.set(data, { merge: true });
+  return;
 };

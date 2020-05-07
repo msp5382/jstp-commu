@@ -21,6 +21,10 @@ const LogoutButton = styled.div`
   position: absolute;
   bottom: 0;
 `;
+const UserContainer = styled.div`
+  display: flex;
+  flex-wrap: true;
+`;
 
 export default (props) => {
   const [users, setUser] = useState([]);
@@ -41,10 +45,11 @@ export default (props) => {
   }, []);
   return (
     <div className="container mt-3">
-      {users.map((user) => (
-        <UserBox user={user}></UserBox>
-      ))}
-
+      <UserContainer>
+        {users.map((user) => (
+          <UserBox key={user.id} user={user}></UserBox>
+        ))}
+      </UserContainer>
       <LogoutButton
         onClick={() => Logout().then(() => history.push("/auth/adminLogin"))}>
         ออกจากระบบ

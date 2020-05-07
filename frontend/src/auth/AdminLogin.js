@@ -72,6 +72,7 @@ export default (props) => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}></TextBox>
         <TextBox
+          type="password"
           style={{ width: "100%", marginTop: 10 }}
           placeholder="รหัสผ่านพิเศษ"
           value={password}
