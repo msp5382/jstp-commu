@@ -49,6 +49,7 @@ export const getPublicUserData = async (onChange) => {
 };
 
 export const saveUserDB = async (data, uid) => {
+  console.log(data);
   let userRef = db.collection("users").doc(uid);
   let publicUserRef = db.collection("publicUser").doc(uid);
   await Promise.all([

@@ -105,6 +105,7 @@ export default ({ user, onSave }) => {
   const setUserData = (e) => {
     console.log("set", e.target.value);
     setNewUserData({
+      ...newUserData,
       [e.target.name]: e.target.value,
     });
   };
